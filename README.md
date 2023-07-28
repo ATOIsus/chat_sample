@@ -1,2 +1,1 @@
-
-## Chat application test
+# Chat app
