@@ -1,8 +1,16 @@
-import "./App.css";
-import thread from "./components/thread";
+import './App.css';
+import { Route, Routes } from "react-router-dom";
+import Thread from './components/thread';
 
 function App() {
-  return thread();
+  return (
+
+    <Routes>
+    <Route path="/" element={<Thread/>} />
+    </Routes>
+    
+
+  );
 }
 
 export default App;
