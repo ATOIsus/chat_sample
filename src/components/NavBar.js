@@ -7,7 +7,7 @@ export default function AppNavbar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Brand className="col-1" as={Link} to="/">
-        <img src={"logo.jpg"} alt="logo" height={"45px"} />
+        <img src={"logo.jpg"} alt="logo" height={"45px"} width={"80%"}/>
       </Navbar.Brand>
 
       <Navbar.Collapse

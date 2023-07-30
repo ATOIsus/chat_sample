@@ -1,0 +1,39 @@
+/* CSS */
+.message-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.speech-bubble {
+  background-color: rgb(
+    205,
+    195,
+    195
+  ); /* Change this to your desired bubble color */
+  color: black;
+  border-radius: 12px;
+  padding: 8px 12px;
+  position: relative;
+  max-width: 200px; /* Adjust the width to fit your content */
+}
+
+.speech-bubble::before {
+  content:  '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid rgb(205, 195, 195); /* Match the bubble background color */
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
