@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
-import { Link } from "react-router-dom"; // Import Link from 'react-router-dom' if you are using React Router
+import { Link } from "react-router-dom"; 
 export default function AppNavbar() {
   return (
-    <Navbar className="col-12" expand="lg">
+    <Navbar className="col-12" expand="lg" style={{ border: '2px solid #ccc' }}>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Brand className="col-1" as={Link} to="/">
@@ -12,7 +12,7 @@ export default function AppNavbar() {
 
       <Navbar.Collapse
         id="basic-navbar-nav"
-        className="justify-content-between col-11"
+        className="justify-content-between col-10"
       >
         <Form inline className="col-6">
           <div className="row">
