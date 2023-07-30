@@ -12,10 +12,19 @@ export default function Thread() {
   }, []);
 
   return (
-    <div className="container justify-content-between col-12 " style={{ padding: "10px"}}>
+    <div className="container col-12">
+    <div
+      className="row flex justify-content-between align-items-center col-12 "
+      style={{ padding: "10px", height:'84vh' }}
+    >
+      <div className="col-1 flex justify-content-end" style={{height:'84vh'}}> 
+        <button style={{ border: "none", background: "transparent" }}>
+          <i className="fa fa-chevron-left"></i>
+        </button>
+      </div>
       <div
-        className="row col-12"
-        style={{ height: "84vh", color: "gray", border: "2px solid #ccc"}}
+        className="row col-11"
+        style={{ height: "84vh", border: "2px solid #ccc" }}
       >
         {data.map((item) => (
           <div>
@@ -56,6 +65,7 @@ export default function Thread() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }
