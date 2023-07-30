@@ -12,10 +12,10 @@ export default function Thread() {
   }, []);
 
   return (
-    <div className="container justify-content-between col-12 ">
+    <div className="container justify-content-between col-12 " style={{ padding: "10px"}}>
       <div
         className="row col-12"
-        style={{ height: "85vh", color: "gray", border: "2px solid #ccc" }}
+        style={{ height: "84vh", color: "gray", border: "2px solid #ccc"}}
       >
         {data.map((item) => (
           <div>
