@@ -1,18 +1,41 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
-import { Link } from "react-router-dom"; 
+import { Navbar, Nav, Form, FormControl, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
 export default function AppNavbar() {
   return (
-    <Navbar className="col-12" expand="lg" style={{ border: '2px solid #ccc' }}>
+    <Navbar
+      className="col-12 d-flex justify-content-evenly"
+      expand="sm"
+      style={{ border: "2px solid #ccc" }}
+    >
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <NavDropdown
+        className=" col-1 d-flex justify-content-end"
+        title={<i className="fa fa-2x fa-bars"></i>}
+      >
+        <NavDropdown.Item as={Link} to="/">
+          smth1
+        </NavDropdown.Item>
+        <NavDropdown.Item as={Link} to="/">
+          smth2
+        </NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item as={Link} to="/">
+          smth3
+        </NavDropdown.Item>
+      </NavDropdown>
 
-      <Navbar.Brand className="col-1" as={Link} to="/">
-        <img src={"logo.jpg"} alt="logo" height={"45px"} width={"80%"}/>
+      <Navbar.Brand
+        className=" col-lg-1 d-flex justify-content-center"
+        as={Link}
+        to="/"
+      >
+        <img src={"logo.jpg"} alt="logo" height={"35px"} width={"60%"} />
       </Navbar.Brand>
 
       <Navbar.Collapse
         id="basic-navbar-nav"
-        className="justify-content-between col-10"
+        className="justify-content-between col-9"
       >
         <Form inline className="col-6">
           <div className="row">
@@ -51,10 +74,10 @@ export default function AppNavbar() {
         </Nav>
 
         <Nav className="col-2 justify-content-center">
-          <Nav.Link href="#">
+          <Nav.Link as={Link} to="/">
             <i className="fa fa-users"></i>
           </Nav.Link>
-          <Nav.Link href="#">
+          <Nav.Link as={Link} to="/">
             <i className="fa fa-user"></i>
           </Nav.Link>
         </Nav>

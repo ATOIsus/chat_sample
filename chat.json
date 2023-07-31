@@ -9,10 +9,13 @@
         {"uid": "uid4", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "テストメッセージ 7"},
         {"uid": "uid1", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "テストメッセージ 8"},
         {"uid": "uid2", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "テストメッセージ 9"},
-        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "テストメッセージ 10"},
+        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10 テストメッセージ 10"},
         {"uid": "uid1", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "こんにちは！"},
         {"uid": "uid2", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "今日はいい天気ですね！"},
-        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "そうですね！"}
+        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "そうですね！"},
+        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "そうですね！"},
+        {"uid": "uid3", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "そうですね！"},
+        {"uid": "uid1", "icon": "https://tukuru-co.com/product/sample/b.jpg", "text": "そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！そうですね！"}
     ]
     ,
     "chats_sample2" : [
