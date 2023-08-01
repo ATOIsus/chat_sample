@@ -3,7 +3,7 @@ import AppNavbar from "../components/Navigation/NavBar";
 import "./Layout.css";
 import Thread from "./Thread/thread";
 
-const Layout = ({ children, checkLogin = true, checkLogout = false }) => {
+const Layout = ({ children, checkLogin = false, checkLogout = false }) => {
   const [myUser_sample1, setMyUser_sample1] = useState(null);
   const [myUser_sample2, setMyUser_sample2] = useState({
     name: "aa",
@@ -31,11 +31,12 @@ const Layout = ({ children, checkLogin = true, checkLogout = false }) => {
 
   return (
     <div>
-      {checkLogin==true ? (
+      {checkLogin===true ? (
         <AppNavbar myUser={myUser_sample2} />
       ) : (
         <AppNavbar myUser={myUser_sample1} />
       )}
+
 
       <main>
         {children}

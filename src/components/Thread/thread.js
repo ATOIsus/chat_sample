@@ -28,11 +28,22 @@ export default function Thread() {
     }
   };
 
+  const handleReturn = () => {
+    console.log("Return");
+  };
+
+  const handleCamera = () => {
+    console.log('Accessing camera.')
+  }
+  const handleGallery = () => {
+    console.log('Accessing camera.')
+  }
+
   return (
     <div className="container col-12">
       <div className="message-div row col-12 flex justify-content-between align-items-center ">
         <div className=" back-button col-1 flex justify-content-end">
-          <button className="icon-button">
+          <button className="icon-button" onClick={handleReturn}>
             <i className="fa fa-chevron-left"></i>
           </button>
         </div>
