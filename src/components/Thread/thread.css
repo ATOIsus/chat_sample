@@ -34,6 +34,43 @@
   transform: translateY(-50%);
 }
 
+.reverse-speech-bubble {
+  background-color: orange;
+  color: black;
+  border-radius: 12px;
+  padding: 8px 12px;
+  position: relative;
+  width: auto;
+  max-width: 50%;
+  display: flex;
+}
+
+.reverse-speech-bubble > div {
+  flex: 1;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.reverse-speech-bubble::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid orange;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.reverseOrder {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
 .order {
   padding-bottom: 10px;
 }

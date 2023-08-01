@@ -38,14 +38,28 @@ export default function Thread() {
         </div>
         <div className="show-chat row col-11 ">
           {data.map((item, index) =>
-            <div key={index} className="order row col-12 align-items-center">
-            <div className="col-4 col-xs-2  col-sm-2 col-md-2 col-lg-1">
-              <img className="icon-container " src={item.icon} alt="Icon" />
-            </div>
-            <div className="speech-bubble col-10 col-lg-11">
-              {item.text}
-            </div>
-          </div>
+            userUID === item.uid ? (
+              <div
+                key={index}
+                className="reverseOrder row col-12 align-items-center"
+              >
+                <div className="reverse-speech-bubble col-10 col-lg-11">
+                  {item.text}
+                </div>
+                <div className="col-2 col-lg-1">
+                  <img className="icon-container " src={item.icon} alt="Icon" />
+                </div>
+              </div>
+            ) : (
+              <div key={index} className="order row col-12 align-items-center">
+                <div className="col-4 col-xs-2  col-sm-2 col-md-2 col-lg-1">
+                  <img className="icon-container " src={item.icon} alt="Icon" />
+                </div>
+                <div className="speech-bubble col-10 col-lg-11">
+                  {item.text}
+                </div>
+              </div>
+            )
           )}
         </div>
         <div className="user-input row col-12 d-flex justify-content-between align-items-center">
