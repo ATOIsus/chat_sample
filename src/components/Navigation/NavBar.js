@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Form, FormControl } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import cancelIcon from "../../images/clear.png";
 import searchIcon from "../../images/search.png";
-import "./NavBar.css";
 import Sidebar from "../SideBar/SideBar";
+import "./NavBar.css";
 
 export default function AppNavbar({ myUser }) {
   const [passedUser, setPassedUser] = useState(myUser);
@@ -34,62 +33,61 @@ export default function AppNavbar({ myUser }) {
             <Sidebar isLoggedIn={true} />
           )}
         </div>
-        <div className="col-6 d-flex justify-content-end">
+        <div className="col-6 d-flex align-items-center justify-content-end">
           <Link to={"/home"}>
-            <img src={"logo.jpg"} alt="logo" height={"50px"} />
+            <img src={"logo.jpg"} alt="logo" height={"40px"} />
           </Link>
         </div>
       </div>
 
       <div className="col-10 d-flex justify-item-center">
-        <div
-          inline
-          className="col-3 d-flex justify-content-evenly align-items-center"
-        >
-          <div className="col-12 d-flex">
-            <div className="col-10" style={{ position: "relative" }}>
-              <input
-                type="text"
-                placeholder="  Search"
-                name="searchValue"
-                value={searchValue}
-                onChange={handleChange}
-                className="col-12"
-                style={{
-                  border: "solid",
-                  borderRadius: "50px",
-                  borderColor: "gray",
-                }}
-              />
+        <div className="col-9 row">
+          <div className="col-5 d-flex justify-content-evenly align-items-center">
+            <div className="col-12 d-flex">
+              <div className="col-10" style={{ position: "relative" }}>
+                <input
+                  type="text"
+                  placeholder="  Search"
+                  name="searchValue"
+                  value={searchValue}
+                  onChange={handleChange}
+                  className="col-12"
+                  style={{
+                    border: "solid",
+                    borderRadius: "50px",
+                    borderColor: "gray",
+                  }}
+                />
 
-              <button
-                className="icon-button"
-                onClick={clearSearchBar}
-                style={{
-                  position: "absolute",
-                  right: "5px",
-                  top: "45%",
-                  transform: "translateY(-50%)",
-                }}
-              >
-                <img src={cancelIcon} alt="cancelIcon" height={"15px"} />
-              </button>
-            </div>
-            <div className="col-1 d-flex align-items-center">
-              <button className="icon-button" onClick={handleSearch}>
-                <img src={searchIcon} alt="searchIcon" height={"23px"} />
-              </button>
+                <button
+                  className="icon-button"
+                  onClick={clearSearchBar}
+                  style={{
+                    position: "absolute",
+                    right: "5px",
+                    top: "45%",
+                    transform: "translateY(-50%)",
+                  }}
+                >
+                  <img src={cancelIcon} alt="cancelIcon" height={"15px"} />
+                </button>
+              </div>
+              <div className="col-1 d-flex align-items-center">
+                <button className="icon-button" onClick={handleSearch}>
+                  <img src={searchIcon} alt="searchIcon" height={"23px"} />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="col-6 d-flex justify-content-evenly align-items-center">
-          <Link to={"/home"}>
-            <label className="nextLink">ファンクラブを始める</label>{" "}
-          </Link>
+          <div className="col-7 d-flex justify-content-evenly align-items-center">
+            <Link to={"/home"}>
+              <label className="nextLink">ファンクラブを始める</label>{" "}
+            </Link>
 
-          <Link to={"/about"}>
-            <label className="nextLink">ファンクラブを探す</label>
-          </Link>
+            <Link to={"/about"}>
+              <label className="nextLink">ファンクラブを探す</label>
+            </Link>
+          </div>
         </div>
 
         <div className="col-3 d-flex justify-content-evenly align-items-center">
