@@ -25,24 +25,26 @@ export default function AppNavbar({ myUser }) {
   };
 
   return (
-    <header className="headerNav col-12 p-0 d-flex justify-content-evenly">
-      <div className="col-1 d-flex justify-content-center">
-        {passedUser === null ? (
-          <Sidebar isLoggedIn={false} />
-        ) : (
-          <Sidebar isLoggedIn={true} />
-        )}
-      </div>
-      <div className="col-1 d-flex justify-content-center">
-      <Link to={"/home"}>
-        <img src={"logo.jpg"} alt="logo" height={"50px"} />
-        </Link>
+    <header className="headerNav col-12 p-0 row ">
+      <div className="col-2 d-flex">
+        <div className="col-6 d-flex justify-content-center">
+          {passedUser === null ? (
+            <Sidebar isLoggedIn={false} />
+          ) : (
+            <Sidebar isLoggedIn={true} />
+          )}
+        </div>
+        <div className="col-6 d-flex justify-content-end">
+          <Link to={"/home"}>
+            <img src={"logo.jpg"} alt="logo" height={"50px"} />
+          </Link>
+        </div>
       </div>
 
-      <div className="col-8 d-flex justify-content-evenly justify-item-center">
+      <div className="col-10 d-flex justify-item-center">
         <div
           inline
-          className="col-6 d-flex justify-content-evenly align-items-center"
+          className="col-3 d-flex justify-content-evenly align-items-center"
         >
           <div className="col-12 d-flex">
             <div className="col-10" style={{ position: "relative" }}>
@@ -80,13 +82,13 @@ export default function AppNavbar({ myUser }) {
             </div>
           </div>
         </div>
-        <div className="col-3 d-flex justify-content-evenly align-items-center">
+        <div className="col-6 d-flex justify-content-evenly align-items-center">
           <Link to={"/home"}>
-            <label className="nextLink">Home</label>{" "}
+            <label className="nextLink">ファンクラブを始める</label>{" "}
           </Link>
 
           <Link to={"/about"}>
-            <label className="nextLink">About us</label>
+            <label className="nextLink">ファンクラブを探す</label>
           </Link>
         </div>
 

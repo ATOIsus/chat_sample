@@ -33,11 +33,11 @@ export default function Thread() {
   };
 
   const handleCamera = () => {
-    console.log('Accessing camera.')
-  }
+    console.log("Accessing camera.");
+  };
   const handleGallery = () => {
-    console.log('Accessing camera.')
-  }
+    console.log("Accessing camera.");
+  };
 
   return (
     <div className="container col-12">

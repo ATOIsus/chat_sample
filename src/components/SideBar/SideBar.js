@@ -28,19 +28,19 @@ const Sidebar = ({ isLoggedIn }) => {
           {isLoggedIn ? (
             <div>
               <li>
-                <Link to="/">User</Link>
+                <Link to="/">マイページ</Link>
               </li>
               <li>
-                <Link to="/">is Logged in</Link>
+                <Link to="/">コミュニティ</Link>
               </li>
             </div>
           ) : (
             <div>
               <li>
-                <Link to="/">No User</Link>
+                <Link to="/">新規登録</Link>
               </li>
               <li>
-                <Link to="/">Not logged In</Link>
+                <Link to="/">ログイン</Link>
               </li>
             </div>
           )}
