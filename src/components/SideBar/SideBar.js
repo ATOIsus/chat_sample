@@ -12,7 +12,7 @@ const Sidebar = ({ isLoggedIn }) => {
   return (
     <div className="d-flex align-items-center">
       <button className="sidebar-toggle-btn" onClick={handleToggleSidebar}>
-        <i className="fa fa-2x fa-bars"></i>
+        <i className="fa fa-bars" style={{fontSize:' 33px'}}></i>
       </button>
       {isOpen ? (
         <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" }}>

@@ -1,13 +1,64 @@
-.nextLink{
-    color: gray;
+.nextLink {
+  color: gray;
+}
+.nextLinkTemp {
+  color: gray;
+}
+.nextLinkRev {
+  color: gray;
 }
 
-.headerNav{
-    border: 2px solid #ccc;
+.headerNav {
+  border: 2px solid #8d8989;
 }
 
-.profile-icon{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+.profile-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.normal-link {
+  display: flex;
+}
+
+.reverse-link {
+  border: 2px solid #8d8989;
+}
+
+@media screen and (max-width: 990px) {
+  .normal-link {
+    display: none;
+    height: 0px;
+    width: 0px;
+  }
+  .nextLinkTemp {
+    height: 0px;
+    width: 0px;
+    display: none;
+  }
+
+  .vl {
+    border-left: 3px solid gray;
+    height: 34px;
+  }
+}
+
+@media (min-width: 990px) {
+  .reverse-link {
+    display: none;
+    height: 0px;
+    width: 0px;
+  }
+  .nextLinkRev {
+    height: 0px;
+    width: 0px;
+    display: none;
+  }
+  .v1 {
+    height: 0px;
+    width: 0px;
+    display: none;
+    border-left: 0px;
+  }
 }

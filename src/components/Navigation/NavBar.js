@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import cancelIcon from "../../images/clear.png";
 import searchIcon from "../../images/search.png";
 import Sidebar from "../SideBar/SideBar";
+import communityIcon from "../../images/community-icon-9183E8.png";
 import "./NavBar.css";
 
 export default function AppNavbar({ myUser }) {
@@ -25,7 +26,9 @@ export default function AppNavbar({ myUser }) {
 
   return (
     <header className="headerNav col-12 p-0 row ">
-      <div className="col-2 d-flex">
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+      <div className="col-3 col-md-2 d-flex">
         <div className="col-6 d-flex justify-content-center">
           {passedUser === null ? (
             <Sidebar isLoggedIn={false} />
@@ -35,14 +38,14 @@ export default function AppNavbar({ myUser }) {
         </div>
         <div className="col-6 d-flex align-items-center justify-content-end">
           <Link to={"/home"}>
-            <img src={"logo.jpg"} alt="logo" height={"40px"} />
+            <img src={"logo.jpg"} alt="logo" height={"35px"} />
           </Link>
         </div>
       </div>
 
-      <div className="col-10 d-flex justify-item-center">
-        <div className="col-9 row">
-          <div className="col-5 d-flex justify-content-evenly align-items-center">
+      <div className="col-9 col-md-10 d-flex justify-content-between align-items-center">
+        <div className="col-7 col-lg-9 row d-flex justify-content-center">
+          <div className="col-12 col-lg-5 d-flex justify-content-evenly align-items-center">
             <div className="col-12 d-flex">
               <div className="col-10" style={{ position: "relative" }}>
                 <input
@@ -79,24 +82,20 @@ export default function AppNavbar({ myUser }) {
               </div>
             </div>
           </div>
-          <div className="col-7 d-flex justify-content-evenly align-items-center">
+          <div className="normal-link col-lg-7 d-flex justify-content-evenly align-items-center">
             <Link to={"/home"}>
-              <label className="nextLink">ファンクラブを始める</label>{" "}
+              <label className="nextLinkTemp">ファンクラブを始める</label>
             </Link>
 
             <Link to={"/about"}>
-              <label className="nextLink">ファンクラブを探す</label>
+              <label className="nextLinkTemp">ファンクラブを探す</label>
             </Link>
           </div>
         </div>
 
-        <div className="col-3 d-flex justify-content-evenly align-items-center">
+        <div className="col-5 col-lg-3 d-flex justify-content-evenly align-items-center">
           <Link to={"/discussion"}>
-            <img
-              src={"community-icon-9183E8.png"}
-              alt="community-icon"
-              height={"50px"}
-            />
+            <img src={communityIcon} alt="community-icon" height={"40px"} />
           </Link>
           {passedUser === null ? (
             <div className="d-flex justify-content-evenly align-items-center">
@@ -112,6 +111,18 @@ export default function AppNavbar({ myUser }) {
               <img className="profile-icon " src={passedUser.icon} alt="Icon" />
             </Link>
           )}
+        </div>
+      </div>
+      <div className="col-12 p-0">
+        <div className="reverse-link col-12 d-flex justify-content-evenly align-items-center">
+          <Link to={"/home"}>
+            <label className="nextLinkRev">ファンクラブを始める</label>
+          </Link>
+          <div className="vl col-1"></div>
+
+          <Link to={"/about"}>
+            <label className="nextLinkRev">ファンクラブを探す</label>
+          </Link>
         </div>
       </div>
     </header>
