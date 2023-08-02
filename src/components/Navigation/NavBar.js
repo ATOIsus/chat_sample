@@ -59,6 +59,7 @@ export default function AppNavbar({ myUser }) {
                     border: "solid",
                     borderRadius: "50px",
                     borderColor: "gray",
+                    paddingLeft: "10px"
                   }}
                 />
 
