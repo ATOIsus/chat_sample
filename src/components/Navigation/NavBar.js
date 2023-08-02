@@ -5,10 +5,12 @@ import searchIcon from "../../images/search.png";
 import Sidebar from "../SideBar/SideBar";
 import communityIcon from "../../images/community-icon-9183E8.png";
 import "./NavBar.css";
+import SearchBar from "../Searchbar/SearchBar";
 
-export default function AppNavbar({ myUser }) {
+export default function AppNavbar({ myUser, categories }) {
   const [passedUser, setPassedUser] = useState(myUser);
   const [searchValue, setSearchValue] = useState("");
+  const [lstCategory, setCategories] = useState(categories);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -24,12 +26,21 @@ export default function AppNavbar({ myUser }) {
     console.log(searchValue);
   };
 
+  function showSearchBar () {
+    console.log('asdasdasd')
+    var searchBar = document.getElementById("searchBar");
+    searchBar.style.display = "block"; 
+
+    var cancelIcon = document.getElementById("clearSearch");
+    cancelIcon.style.display = "block";
+}
+
   return (
-    <header className="headerNav col-12 p-0  m-0 row " >
+    <header className="headerNav col-12 p-0  m-0 row ">
       <meta content="width=device-width, initial-scale=1" name="viewport" />
 
       <div className="col-3 col-md-2 d-flex">
-        <div className="col-6 d-flex justify-content-center" >
+        <div className="col-6 d-flex justify-content-center">
           {passedUser === null ? (
             <Sidebar isLoggedIn={false} />
           ) : (
@@ -54,16 +65,19 @@ export default function AppNavbar({ myUser }) {
                   name="searchValue"
                   value={searchValue}
                   onChange={handleChange}
-                  className="col-12"
+                  id="searchBar"
+                  className="searchBar col-12"
                   style={{
                     border: "solid",
                     borderRadius: "50px",
                     borderColor: "gray",
-                    paddingLeft: "10px"
+                    paddingLeft: "10px",
+                    display: "none",
                   }}
                 />
 
                 <button
+                id="clearSearch"
                   className="icon-button"
                   onClick={clearSearchBar}
                   style={{
@@ -71,13 +85,15 @@ export default function AppNavbar({ myUser }) {
                     right: "5px",
                     top: "45%",
                     transform: "translateY(-50%)",
+                    display: "none",
                   }}
                 >
+
                   <img src={cancelIcon} alt="cancelIcon" height={"15px"} />
                 </button>
               </div>
               <div className="col-1 d-flex align-items-center">
-                <button className="icon-button" onClick={handleSearch}>
+                <button className="icon-button" onClick={showSearchBar}>
                   <img src={searchIcon} alt="searchIcon" height={"23px"} />
                 </button>
               </div>

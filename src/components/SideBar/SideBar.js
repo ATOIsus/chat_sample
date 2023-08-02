@@ -11,13 +11,15 @@ const Sidebar = ({ isLoggedIn }) => {
 
   return (
     <div className="d-flex align-items-center">
-      <button className="sidebar-toggle-btn" onClick={handleToggleSidebar} style={{ position: "relative" }}>
-        <i className="fa fa-bars" style={{fontSize:' 33px'}}></i>
+      <button
+        className="sidebar-toggle-btn"
+        onClick={handleToggleSidebar}
+        style={{ position: "relative" }}
+      >
+        <i className="fa fa-bars" style={{ fontSize: " 33px" }}></i>
       </button>
       {isOpen ? (
-        <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" ,
-        
-      }}>
+        <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" }}>
           <li>
             <Link to="/">ファンクラブを始める</Link>
           </li>
