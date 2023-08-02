@@ -20,10 +20,10 @@ const Sidebar = ({ isLoggedIn }) => {
           top: "50px",
       }}>
           <li>
-            <Link to="/">Option 1</Link>
+            <Link to="/">ファンクラブを始める</Link>
           </li>
           <li>
-            <Link to="/">Option 2</Link>
+            <Link to="/">ファンクラブを探す</Link>
           </li>
           <div>
             <hr style={{ width: "80%", height: "2px", background: "gray" }} />

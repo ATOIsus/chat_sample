@@ -38,7 +38,7 @@ export default function AppNavbar({ myUser }) {
         </div>
         <div className="col-6 d-flex align-items-center justify-content-end">
           <Link to={"/home"}>
-            <img src={"logo.jpg"} alt="logo" height={"35px"} />
+            <img src={"logo.jpg"} alt="logo" height={"35px"} width={"100%"} />
           </Link>
         </div>
       </div>
