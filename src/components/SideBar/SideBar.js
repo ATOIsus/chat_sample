@@ -11,11 +11,14 @@ const Sidebar = ({ isLoggedIn }) => {
 
   return (
     <div className="d-flex align-items-center">
-      <button className="sidebar-toggle-btn" onClick={handleToggleSidebar}>
+      <button className="sidebar-toggle-btn" onClick={handleToggleSidebar} style={{ position: "relative" }}>
         <i className="fa fa-bars" style={{fontSize:' 33px'}}></i>
       </button>
       {isOpen ? (
-        <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" }}>
+        <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" ,
+          position: "absolute",
+          top: "50px",
+      }}>
           <li>
             <Link to="/">Option 1</Link>
           </li>
