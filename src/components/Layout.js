@@ -32,17 +32,14 @@ const Layout = ({ children, checkLogin = true, checkLogout = false }) => {
 
   return (
     <div>
-      {checkLogin===true ? (
-        <AppNavbar myUser={myUser_sample2} categories={categories}/>
+      {checkLogin === true ? (
+        <AppNavbar myUser={myUser_sample2} categories={categories} />
       ) : (
         <AppNavbar myUser={myUser_sample1} />
       )}
 
-
       <main>
         {children}
-        <SearchBar lstCategory={categories} />
-
         <Thread />
       </main>
     </div>

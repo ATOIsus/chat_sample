@@ -1,60 +1,135 @@
 import { useState } from "react";
 import "./SearchBar.css";
+import cancelIcon from "../../images/clear.png";
+import searchIcon from "../../images/search.png";
 
 const SearchBar = ({ lstCategory }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchCat, setSearchValue] = useState("");
   const [categories, setCategories] = useState(lstCategory);
+  const [switchValue, setSwitchValue] = useState(false);
 
-  const onChange = (event) => {
-    console.log("search ", event.target.value);
-    setSearchValue(event.target.value);
+  const handleChange = (e) => {
+    e.preventDefault();
+    hideSidebar();
+    setSearchValue(e.target.value);
   };
 
-  const onSearch = (inputWord) => {
-    setSearchValue(inputWord);
-    console.log("search ", inputWord);
+  const clearSearchBar = () => {
+    setSearchValue("");
+  };
+
+  const handleSearch = () => {
+    console.log(searchCat);
+  };
+
+  function showSearchBar() {
+    var searchBar = document.getElementById("searchCatBar");
+    searchBar.style.display = "block";
+
+    var cancelIcon = document.getElementById("clearSearch");
+    cancelIcon.style.display = "block";
+  }
+
+  const handleSwitchSearch = () => {
+    if (switchValue === false) {
+      showSearchBar();
+      hideSidebar();
+      setSwitchValue(true);
+    } else if (switchValue === true) {
+      handleSearch();
+      setSwitchValue(false);
+    }
+  };
+
+  const hideSidebar = () => {
+    try {
+      var sidebar = document.getElementById("sidebar-menu");
+      sidebar.style.left = "-500px";
+    } catch (e) {}
+  };
+
+  const updateSearchValue = (category) => {
+    setSearchValue(category);
   };
 
   return (
-    <div className="search-container">
-      <div className="search-inner">
-        <input
-          className="search-bar"
-          type="text"
-          value={searchValue}
-          onChange={onChange}
-        />
-        <button onClick={() => onSearch(searchValue)}> Search </button>
+    <div className="search-bar-container col-12 m-0 d-flex">
+
+      <div className="search-container col-11" style={{ position: "relative" }}>
+        <div className="search-inner col-12">
+          <input
+            className="search-bar col-12"
+            type="text"
+            value={searchCat}
+            id="searchCatBar"
+            placeholder="  さがす"
+            name="searchCat"
+            onChange={handleChange}
+            autocomplete="off"
+            onFocus={hideSidebar}
+            style={{
+              border: "solid",
+              borderRadius: "50px",
+              borderColor: "gray",
+              paddingLeft: "10px",
+              display: "none",
+            }}
+          />
+          <button
+            id="clearSearch"
+            className="icon-button"
+            onClick={clearSearchBar}
+            style={{
+              position: "absolute",
+              right: "5px",
+              top: "45%",
+              transform: "translateY(-50%)",
+              display: "none",
+            }}
+          >
+            <img src={cancelIcon} alt="cancelIcon" height={"15px"} />
+          </button>
+        </div>
+
+        {categories === null ? (
+          <div className="dropdown">カテゴリなし</div>
+        ) : (
+          <div className="dropdown">
+            {searchCat === ""
+              ? categories.map((cat) => (
+                  <div
+                    onClick={() => updateSearchValue(cat)}
+                    className="dropdown-row"
+                    key={cat}
+                  >
+                    {cat}
+                  </div>
+                ))
+              : categories
+                  .filter((category) => {
+                    return (
+                      searchCat &&
+                      category.startsWith(searchCat) &&
+                      category !== searchCat
+                    );
+                  })
+                  .slice(0, 10)
+                  .map((cat) => (
+                    <div
+                      onClick={() => updateSearchValue(cat)}
+                      className="dropdown-row"
+                      key={cat}
+                    >
+                      {cat}
+                    </div>
+                  ))}
+          </div>
+        )}
       </div>
-      <div className="dropdown">
-        {searchValue === ""
-          ? categories.map((cat) => (
-              <div
-                onClick={() => onSearch(cat)}
-                className="dropdown-row"
-                key={cat}
-              >
-                {cat}
-              </div>
-            ))
-          : categories
-              .filter((category) => {
-                return (
-                  searchValue &&
-                  category.startsWith(searchValue) &&
-                  category !== searchValue
-                );
-              })
-              .slice(0, 10)
-              .map((cat) => (
-                <div
-                  onClick={() => onSearch(cat)}
-                  className="dropdown-row"
-                  key={cat}
-                >
-                  {cat}
-                </div>
-              ))}
+      <div className="col-1 d-flex align-items-center">
+        <button className="icon-button" onClick={handleSwitchSearch}>
+          <img src={searchIcon} alt="searchIcon" height={"23px"} />
+        </button>
       </div>
     </div>
   );

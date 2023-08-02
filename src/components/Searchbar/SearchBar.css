@@ -1,5 +1,4 @@
 .search-container {
-  width: 280px;
   display: flex;
   flex-direction: column;
 }
@@ -10,6 +9,10 @@
   flex-direction: column;
   border: 1px solid gray;
   display: none;
+  z-index: 10;
+  position: absolute;
+  top: 30px;
+  width: 80vh;
 }
 
 .dropdown:empty {
@@ -22,10 +25,15 @@
   margin: 2px 0;
 }
 
+.dropdown:hover {
+  display: flex;
+}
+
 .search-inner {
   display: flex;
 }
+
 .search-container:focus-within .dropdown {
-    display: block;
-  }
-  
+  display: block;
+}
+

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import cancelIcon from "../../images/clear.png";
-import searchIcon from "../../images/search.png";
 import Sidebar from "../SideBar/SideBar";
 import communityIcon from "../../images/community-icon-9183E8.png";
 import "./NavBar.css";
@@ -9,31 +7,7 @@ import SearchBar from "../Searchbar/SearchBar";
 
 export default function AppNavbar({ myUser, categories }) {
   const [passedUser, setPassedUser] = useState(myUser);
-  const [searchValue, setSearchValue] = useState("");
   const [lstCategory, setCategories] = useState(categories);
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    const { name, value } = e.target;
-    setSearchValue(value);
-  };
-
-  const clearSearchBar = () => {
-    setSearchValue("");
-  };
-
-  const handleSearch = () => {
-    console.log(searchValue);
-  };
-
-  function showSearchBar () {
-    console.log('asdasdasd')
-    var searchBar = document.getElementById("searchBar");
-    searchBar.style.display = "block"; 
-
-    var cancelIcon = document.getElementById("clearSearch");
-    cancelIcon.style.display = "block";
-}
 
   return (
     <header className="headerNav col-12 p-0  m-0 row ">
@@ -56,47 +30,9 @@ export default function AppNavbar({ myUser, categories }) {
 
       <div className="col-9 col-md-10 d-flex justify-content-between align-items-center">
         <div className="col-7 col-lg-9 row d-flex justify-content-center">
-          <div className="col-12 col-lg-5 d-flex justify-content-evenly align-items-center">
-            <div className="col-12 d-flex">
-              <div className="col-10" style={{ position: "relative" }}>
-                <input
-                  type="text"
-                  placeholder="  Search"
-                  name="searchValue"
-                  value={searchValue}
-                  onChange={handleChange}
-                  id="searchBar"
-                  className="searchBar col-12"
-                  style={{
-                    border: "solid",
-                    borderRadius: "50px",
-                    borderColor: "gray",
-                    paddingLeft: "10px",
-                    display: "none",
-                  }}
-                />
-
-                <button
-                id="clearSearch"
-                  className="icon-button"
-                  onClick={clearSearchBar}
-                  style={{
-                    position: "absolute",
-                    right: "5px",
-                    top: "45%",
-                    transform: "translateY(-50%)",
-                    display: "none",
-                  }}
-                >
-
-                  <img src={cancelIcon} alt="cancelIcon" height={"15px"} />
-                </button>
-              </div>
-              <div className="col-1 d-flex align-items-center">
-                <button className="icon-button" onClick={showSearchBar}>
-                  <img src={searchIcon} alt="searchIcon" height={"23px"} />
-                </button>
-              </div>
+          <div className="col-12 col-lg-5 p-0 d-flex justify-content-evenly align-items-center">
+            <div className="col-12d-flex">
+              <SearchBar lstCategory={lstCategory} />
             </div>
           </div>
           <div className="normal-link col-lg-7 d-flex justify-content-evenly align-items-center">

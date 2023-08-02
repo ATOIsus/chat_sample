@@ -19,7 +19,7 @@ const Sidebar = ({ isLoggedIn }) => {
         <i className="fa fa-bars" style={{ fontSize: " 33px" }}></i>
       </button>
       {isOpen ? (
-        <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" }}>
+        <ul id="sidebar-menu" className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" }}>
           <li>
             <Link to="/">ファンクラブを始める</Link>
           </li>
