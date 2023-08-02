@@ -44,7 +44,7 @@ const SearchBar = ({ lstCategory }) => {
   const hideSidebar = () => {
     try {
       var sidebar = document.getElementById("sidebar-menu");
-      sidebar.style.left = "-500px";
+      sidebar.style.display = 'none';
     } catch (e) {}
   };
 
@@ -65,7 +65,7 @@ const SearchBar = ({ lstCategory }) => {
             placeholder="  さがす"
             name="searchCat"
             onChange={handleChange}
-            autocomplete="off"
+            autoComplete="off"
             onFocus={hideSidebar}
             style={{
               border: "solid",
@@ -109,7 +109,7 @@ const SearchBar = ({ lstCategory }) => {
                   .filter((category) => {
                     return (
                       searchCat &&
-                      category.startsWith(searchCat) &&
+                      category.includes(searchCat) &&
                       category !== searchCat
                     );
                   })

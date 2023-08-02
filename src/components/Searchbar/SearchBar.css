@@ -11,8 +11,10 @@
   display: none;
   z-index: 10;
   position: absolute;
-  top: 30px;
-  width: 80vh;
+  top: 39px;
+  left:-250px;
+  width: 165vh;
+  height: 92vh;
 }
 
 .dropdown:empty {
