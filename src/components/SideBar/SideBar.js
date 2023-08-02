@@ -16,8 +16,7 @@ const Sidebar = ({ isLoggedIn }) => {
       </button>
       {isOpen ? (
         <ul className="sidebar-menu" style={{ left: isOpen ? "0" : "-200px" ,
-          position: "absolute",
-          top: "50px",
+        
       }}>
           <li>
             <Link to="/">ファンクラブを始める</Link>
@@ -26,7 +25,7 @@ const Sidebar = ({ isLoggedIn }) => {
             <Link to="/">ファンクラブを探す</Link>
           </li>
           <div>
-            <hr style={{ width: "80%", height: "2px", background: "gray" }} />
+            <hr style={{ width: "100%", height: "2px", background: "gray" }} />
           </div>
           {isLoggedIn ? (
             <div>
@@ -48,7 +47,7 @@ const Sidebar = ({ isLoggedIn }) => {
             </div>
           )}
           <div>
-            <hr style={{ width: "80%", height: "2px", background: "gray" }} />
+            <hr style={{ width: "100%", height: "2px", background: "gray" }} />
           </div>
         </ul>
       ) : null}

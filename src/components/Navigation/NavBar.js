@@ -25,7 +25,7 @@ export default function AppNavbar({ myUser }) {
   };
 
   return (
-    <header className="headerNav col-12 p-0 row " >
+    <header className="headerNav col-12 p-0  m-0 row " >
       <meta content="width=device-width, initial-scale=1" name="viewport" />
 
       <div className="col-3 col-md-2 d-flex">
