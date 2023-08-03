@@ -4,6 +4,7 @@ import Sidebar from "../SideBar/SideBar";
 import communityIcon from "../../images/community-icon-9183E8.png";
 import "./NavBar.css";
 import SearchBar from "../Searchbar/SearchBar";
+import SearchBarSmaller from "../Searchbar/SearchBarSmaller";
 
 export default function AppNavbar({ myUser, categories }) {
   const [passedUser, setPassedUser] = useState(myUser);
@@ -13,7 +14,7 @@ export default function AppNavbar({ myUser, categories }) {
     <header className="headerNav col-12 p-0  m-0 row ">
       <meta content="width=device-width, initial-scale=1" name="viewport" />
 
-      <div className="col-3 col-md-2 d-flex">
+      <div className="col-5 col-md-2 d-flex align-items-center">
         <div className="col-6 d-flex justify-content-center">
           {passedUser === null ? (
             <Sidebar isLoggedIn={false} />
@@ -28,12 +29,10 @@ export default function AppNavbar({ myUser, categories }) {
         </div>
       </div>
 
-      <div className="col-9 col-md-10 d-flex justify-content-between align-items-center">
-        <div className="col-7 col-lg-9 row d-flex justify-content-center">
-          <div className="col-12 col-lg-5 p-0 d-flex justify-content-evenly align-items-center">
-            <div className="col-12d-flex">
+      <div className="col-6 col-md-10 d-flex justify-content-between align-items-center">
+        <div className=" bigger-search-bar col-7 col-lg-9 row d-flex justify-content-center">
+          <div className=" col-12 col-lg-5 d-flex justify-content-evenly align-items-center">
               <SearchBar lstCategory={lstCategory} />
-            </div>
           </div>
           <div className="normal-link col-lg-7 d-flex justify-content-evenly align-items-center">
             <Link to={"/home"}>
@@ -45,8 +44,9 @@ export default function AppNavbar({ myUser, categories }) {
             </Link>
           </div>
         </div>
+       
 
-        <div className="col-5 col-lg-3 d-flex justify-content-evenly align-items-center">
+        <div className="col-12 col-lg-3 d-flex justify-content-evenly align-items-center">
           <Link to={"/discussion"}>
             <img src={communityIcon} alt="community-icon" height={"40px"} />
           </Link>
@@ -66,6 +66,9 @@ export default function AppNavbar({ myUser, categories }) {
           )}
         </div>
       </div>
+      <div className="smaller-search-bar col-12 px-0  py-1  d-flex">
+          <SearchBarSmaller lstCategory={lstCategory} />
+        </div>
       <div className="col-12 p-0">
         <div className="reverse-link col-12 d-flex justify-content-evenly align-items-center">
           <Link to={"/home"}>

@@ -26,6 +26,23 @@
   border-top: 1px solid;
 }
 
+@media (min-width: 550px) {
+  .smaller-search-bar {
+    display: none !important;
+    height: 0px !important;
+    width: 0px !important;
+  }
+}
+@media (max-width: 550px) {
+  .bigger-search-bar {
+    display: none !important;
+    height: 0px !important;
+    width: 0px !important;
+  }
+  .sidebar-menu {
+    left: 0px !important;
+  }
+}
 @media (max-width: 990px) {
   .normal-link {
     display: none;
