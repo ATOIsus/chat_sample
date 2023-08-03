@@ -92,9 +92,9 @@ const SearchBarSmaller = ({ lstCategory }) => {
         </div>
 
         {categories === null ? (
-          <div className="dropdown-small">カテゴリなし</div>
+          <div className="dropdown">カテゴリなし</div>
         ) : (
-          <div className="dropdown-small">
+          <div className="dropdown">
             {searchCat === ""
               ? categories.map((cat) => (
                   <div
